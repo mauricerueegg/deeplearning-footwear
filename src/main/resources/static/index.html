@@ -1,39 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
-    <title>Image Classification</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Flower Classifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font für ein modernes, leichtes Gefühl -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom, #fef6f6, #f3f8f3);
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            background-color: #ffeef2;
+            background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+            background-repeat: repeat;
+            border-bottom: 4px solid #fbcfe8;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #d63384;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #7b2cbf;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff0f6;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #a83279;
+        }
+
+        input[type="file"] {
+            display: block;
+            padding: 0.5rem;
+            border: 2px dashed #ffc8dd;
+            border-radius: 0.5rem;
+            background-color: #fff;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        #answerPart {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fffafc;
+            border-radius: 0.5rem;
+            border: 1px solid #ffc9de;
+        }
+
+        #answer {
+            font-weight: bold;
+            color: #7b2cbf;
+        }
+
+        img#preview {
+            border-radius: 1rem;
+            margin-top: 1rem;
+            border: 2px solid #f8bbd0;
+        }
+    </style>
     <script src="script.js" async></script>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <h1>Footwear Classification</h1>
-        <p>DeepJavaLibrary (DJL) Demonstration by mosa</p>
+    <header>
+        <h1>🌸 Flower Classification</h1>
+        <p>Ein Projekt mit Deep Java Library (DJL)</p>
+    </header>
 
+    <div class="container">
         <form>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Bitte Bild hochladen (jpeg, png)</label>
-                <input type="file" accept="image/png, image/jpeg" class="form-control-file" id="image" name="image"
-                    onchange="checkFiles(this.files);">
-            </div>
+            <label for="image">Bitte ein Blumenbild hochladen (JPEG oder PNG)</label>
+            <input type="file" accept="image/png, image/jpeg" id="image" name="image"
+                onchange="checkFiles(this.files);">
         </form>
 
         <div id="answerPart" style="visibility: hidden;">
-            <p><b>Answer:</b>
+            <p><strong>Antwort:</strong></p>
             <div id="answer"></div>
-            </p>
 
-            <p id="previewPart"><b>Analyzed Image:</b>
-            <p><img id="preview" width="300" src="#" alt="preview" /></p>
-            </p>
+            <p><strong>Analysiertes Bild:</strong></p>
+            <img id="preview" width="300" src="#" alt="Vorschau" />
         </div>
     </div>
-
 
 </body>
 
