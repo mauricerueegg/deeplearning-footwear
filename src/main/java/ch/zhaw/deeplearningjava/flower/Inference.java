@@ -1,4 +1,4 @@
-package ch.zhaw.deeplearningjava.footwear;
+package ch.zhaw.deeplearningjava.flower;
 
 import ai.djl.Model;
 import ai.djl.ModelException;

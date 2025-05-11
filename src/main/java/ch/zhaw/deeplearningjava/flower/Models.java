@@ -10,7 +10,7 @@
  * OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package ch.zhaw.deeplearningjava.footwear;
+package ch.zhaw.deeplearningjava.flower;
 
 import ai.djl.Model;
 import ai.djl.basicmodelzoo.cv.classification.ResNetV1;
@@ -26,7 +26,7 @@ import java.util.List;
 /** A helper class loads and saves model. */
 public final class Models {
 
-    // the number of classification labels: boots, sandals, shoes, slippers
+    // the number of classification labels
     public static final int NUM_OF_OUTPUT = 14;
 
     // the height and width for pre-processing of the image
@@ -34,7 +34,7 @@ public final class Models {
     public static final int IMAGE_WIDTH = 100;
 
     // the name of the model
-    public static final String MODEL_NAME = "shoeclassifier";
+    public static final String MODEL_NAME = "flowerclassifier";
 
     private Models() {}
 

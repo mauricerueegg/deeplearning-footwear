@@ -10,7 +10,7 @@
  * OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package ch.zhaw.deeplearningjava.footwear;
+package ch.zhaw.deeplearningjava.flower;
 
 import ai.djl.Model;
 import ai.djl.basicdataset.cv.classification.ImageFolder;
@@ -45,7 +45,7 @@ import java.nio.file.Paths;
 public final class Training {
 
     // represents number of training samples processed before the model is updated
-    private static final int BATCH_SIZE = 32;
+    private static final int BATCH_SIZE = 4;
 
     // the number of passes over the complete dataset
     private static final int EPOCHS = 10;
@@ -92,7 +92,6 @@ public final class Training {
         model.setProperty("Loss", String.format("%.5f", result.getValidateLoss()));
 
         // save the model after done training for inference later
-        // model saved as shoeclassifier-0000.params
         model.save(modelDir, Models.MODEL_NAME);
 
         // save labels into model directory
